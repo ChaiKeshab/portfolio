@@ -1,22 +1,36 @@
-<!doctype html>
+---
+import Head from "../components/Head.astro";
+import Navigation from "../components/Navigation.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+
+interface Props {
+    title?: string | undefined;
+    description?: string | undefined;
+}
+
+const { title, description } = Astro.props;
+---
+
+---
+
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <head>
+        <Head title={title} description={description} />
+    </head>
+    <body>
+        <Navigation />
+        <main>
+            <slot />
+        </main>
+        <SocialLinks />
+    </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
 </style>

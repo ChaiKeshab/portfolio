@@ -1,0 +1,33 @@
+---
+import logo from "../images/logo.png";
+
+const sections = [
+  { name: "Hero", link: "#hero" },
+  { name: "About Me", link: "#about" },
+  { name: "Experience", link: "#experience" },
+  { name: "Projects", link: "#projects" },
+  { name: "Get in Touch", link: "#contact" },
+];
+---
+
+<nav class="">
+  <!-- <img src={logo.src} alt="Logo" /> -->
+  <div class="flex items-center justify-between p-4">
+    <a
+      href="/"
+      class="text-2xl font-medium text-white hover:text-blue-500 transition-colors duration-300"
+      ><span class="text-white">CHAI</span>
+      <span class="text-blue-500">KESHAB</span>
+    </a>
+
+    <ul class="flex justify-end space-x-4 p-4 text-white">
+      {
+        sections.map((section) => (
+          <li>
+            <a href={section.link}>{section.name}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</nav>

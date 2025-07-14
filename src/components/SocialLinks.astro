@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+
+const githubUrl = "https://github.com/yourusername";
+const linkedinUrl = "https://linkedin.com/in/yourusername";
+const twitterUrl = "https://linkedin.com/in/yourusername";
+---
+
+<!-- svg files as code instead of previews
+
+Go to Settings
+Search for: workbench.editorAssociations
+Click Add Item:
+
+Key: *.svg
+Value: default
+ -->
+<div class="social-links">
+  <Icon size={24} class={` text-red-600`} name="github" />
+  <Icon size={24} class={` text-red-600`} name="linkedin" />
+  <Icon size={24} class={` text-red-600`} name="twitter" />
+
+  <a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub</a>
+  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  <a href={twitterUrl} target="_blank" rel="noopener noreferrer">Twitter</a>
+</div>
+
+<style>
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .social-links a {
+    text-decoration: none;
+    color: #0070f3;
+    transition: color 0.3s;
+  }
+
+  .social-links a:hover {
+    color: #005bb5;
+  }
+</style>
