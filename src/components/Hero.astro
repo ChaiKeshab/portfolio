@@ -1,46 +1,45 @@
-<section class="hero">
-  <div class="hero-content">
-    <h1>Welcome to My Portfolio</h1>
-    <p>I'm [Your Name], a passionate developer.</p>
-    <a href="#projects" class="cta-button">View My Work</a>
+---
+
+---
+
+<!-- Hero Section -->
+<main
+  class="bg-backgroundx relative z-10 min-h-[calc(100vh-64px)] flex items-center"
+>
+  <div class="container mx-auto py-20">
+    <div class="hero-content space-y-6">
+      <div class="font-mono text-primary text-lg animate-fade-in-up">
+        Hi, my name is
+      </div>
+      <h1 class="text-6xl font-bold text-text animate-fade-in-up-delay-1">
+        Keshab Chai
+      </h1>
+      <h2
+        class="text-4xl md:text-6xl font-bold text-muted animate-fade-in-up-delay-2"
+      >
+        <span
+          class="bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent"
+        >
+          I build things for the web
+        </span>
+      </h2>
+      <div class="text-muted leading-relaxed space-y-4">
+        <p>
+          I'm a software engineer specializing in building (and occasionally
+          designing) exceptional digital experiences.
+        </p>
+      </div>
+    </div>
   </div>
-</section>
 
-<style>
-  .hero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: url("/path/to/your/background-image.jpg") no-repeat center
-      center/cover;
-    color: white;
-    text-align: center;
-  }
-
-  .hero-content {
-    animation: fadeIn 1s ease-in;
-  }
-
-  .cta-button {
-    padding: 10px 20px;
-    background-color: #007acc;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-
-  .cta-button:hover {
-    background-color: #005f99;
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-</style>
+  <!-- Scroll Indicator -->
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-60"
+  >
+    <div
+      class="w-6 h-10 border-2 border-border rounded-full flex justify-center"
+    >
+      <div class="w-1 h-3 bg-border rounded-full mt-2 animate-pulse"></div>
+    </div>
+  </div>
+</main>

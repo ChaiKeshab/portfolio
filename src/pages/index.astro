@@ -1,18 +1,19 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import AboutMe from "../components/AboutMe.astro";
 import Experience from "../components/Experience.astro";
 import Projects from "../components/Projects.astro";
 import ContactSection from "../components/ContactSection.astro";
-import SocialLinks from "../components/SocialLinks.astro";
 import "../styles/global.css";
+import Welcome from "../components/Welcome.astro";
 ---
 
-<Layout title="Portfolio">
+<BaseLayout title="Portfolio">
   <Hero />
-  <AboutMe />
-  <Experience />
-  <Projects />
-  <ContactSection />
-</Layout>
+  <Welcome />
+  <!-- <AboutMe /> -->
+  <!-- <Experience /> -->
+  <!-- <Projects /> -->
+  <!-- <ContactSection /> -->
+</BaseLayout>

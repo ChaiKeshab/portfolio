@@ -1,34 +1,95 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    -webkit-font-smoothing: antialiased;
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 
 @theme {
+    --color-primary: oklch(65% 0.18 260);
+    --color-secondary: oklch(75% 0.10 130);
+    --color-accent: oklch(85% 0.13 40);
+    --color-background: oklch(98% 0.005 250);
+    --color-surface: oklch(94% 0.01 250);
+    --color-border: oklch(84% 0.01 250);
+    --color-text: oklch(20% 0.01 250);
+    --color-muted: oklch(40% 0.02 250);
+    --color-subtle: oklch(60% 0.03 250);
+    --color-success: oklch(70% 0.17 145);
+    --color-error: oklch(60% 0.20 30);
+    --color-warning: oklch(80% 0.18 90);
+}
 
-    --color-primary: var(--primary);
-    --color-secondary: #FAFAFA;
-    --color-customBlue: var(--secondary);
 
-    --color-primary-text: #101828;
-    --color-secondary-text: var(--primary);
-    --color-hover-text: var(--primary);
-    --color-customGray-text: #474D59;
-    --color-customBlue-text: var(--secondary);
+.dark {
+    --color-primary: oklch(70% 0.17 240);
+    --color-secondary: oklch(68% 0.13 150);
+    --color-accent: oklch(75% 0.15 60);
+    --color-background: oklch(21% 0.01 250);
+    --color-surface: oklch(28% 0.01 250);
+    --color-border: oklch(38% 0.01 250);
+    --color-text: oklch(96% 0.01 250);
+    --color-muted: oklch(70% 0.02 250);
+    --color-subtle: oklch(55% 0.02 250);
+    --color-success: oklch(75% 0.18 145);
+    --color-error: oklch(70% 0.20 30);
+    --color-warning: oklch(85% 0.18 90);
+}
 
-    --color-secondary-border: var(--primary);
-    --color-primary-border: #ECEDEE;
-    /* --color-primary-border: var(--primary); */
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -1,33 +1,121 @@
 ---
-import logo from "../images/logo.png";
+import { Icon } from "astro-icon/components";
 
 const sections = [
-  { name: "Hero", link: "#hero" },
-  { name: "About Me", link: "#about" },
+  { name: "About", link: "#about" },
   { name: "Experience", link: "#experience" },
-  { name: "Projects", link: "#projects" },
-  { name: "Get in Touch", link: "#contact" },
+  { name: "Work", link: "#work" },
+  { name: "Contact", link: "#contact" },
 ];
 ---
 
-<nav class="">
-  <!-- <img src={logo.src} alt="Logo" /> -->
-  <div class="flex items-center justify-between p-4">
-    <a
-      href="/"
-      class="text-2xl font-medium text-white hover:text-blue-500 transition-colors duration-300"
-      ><span class="text-white">CHAI</span>
-      <span class="text-blue-500">KESHAB</span>
+<nav>
+  <div class="flex items-center justify-between py-4 px-2 md:px-10">
+    <a href="/" class="text-2xl font-medium text-text">
+      <span class="text-primary">C</span>
+      <!-- <span>CHAI</span>
+      <span class="text-primary">KESHAB</span> -->
     </a>
 
-    <ul class="flex justify-end space-x-4 p-4 text-white">
+    <!-- Desktop nav -->
+    <ul class="hidden md:flex text-base items-center text-muted">
       {
         sections.map((section) => (
           <li>
-            <a href={section.link}>{section.name}</a>
+            <a
+              href={section.link}
+              class="px-3 py-4 text-muted hover:text-primary transition-colors duration-300"
+            >
+              {section.name}
+            </a>
           </li>
         ))
       }
+      <li>
+        <a
+          href="#"
+          class="px-3 py-4 text-muted hover:text-primary transition-colors duration-300"
+        >
+          Resume
+        </a>
+      </li>
+
+      <!-- Theme Toggle -->
+      <li class="flex justify-center items-center w-fit">
+        <button
+          id="theme-toggle"
+          class="pl-3 hover:text-primary transition duration-300"
+          title="Toggle theme"
+        >
+          <Icon size={25} name="sun" class="block dark:hidden text-muted" />
+          <Icon size={25} name="moon" class="hidden dark:block text-muted" />
+        </button>
+      </li>
     </ul>
+
+    <button
+      id="menu-toggle"
+      class="md:hidden text-muted text-3xl focus:outline-none"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="sr-only">Toggle menu</span>
+      <Icon name="hamburger" />
+    </button>
   </div>
+
+  <!-- Mobile nav -->
+  <ul
+    id="mobile-menu"
+    class="hidden flex-col space-y-2 px-4 pb-4 text-muted md:hidden"
+  >
+    {
+      sections.map((section) => (
+        <li>
+          <a
+            href={section.link}
+            class="block px-3 py-2 rounded hover:bg-surface hover:text-primary transition"
+          >
+            {section.name}
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <a
+        href="#"
+        class="block px-3 py-2 rounded hover:bg-surface hover:text-primary transition"
+      >
+        Resume
+      </a>
+    </li>
+  </ul>
+
+  <script is:inline defer>
+    (() => {
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("mobile-menu");
+
+      toggle?.addEventListener("click", () => {
+        const isOpen = menu.classList.contains("hidden");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+        menu.classList.toggle("hidden");
+      });
+
+      const themeToggle = document.getElementById("theme-toggle");
+      themeToggle?.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          document.documentElement.classList.contains("dark")
+            ? "dark"
+            : "light",
+        );
+      });
+
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.classList.add("dark");
+      }
+    })();
+  </script>
 </nav>
