@@ -1,8 +1,8 @@
 ---
 import { Icon } from "astro-icon/components";
-import Footer from "../components/Footer.astro";
 import Head from "../components/Head.astro";
 import Navigation from "../components/Navigation.astro";
+import background from "../assets/background.svg";
 
 interface Props {
     title?: string | undefined;
@@ -20,6 +20,8 @@ const { title, description } = Astro.props;
         <Head title={title} description={description} />
     </head>
     <body>
+        <img id="background" src={background.src} alt="" fetchpriority="high" />
+
         <Navigation />
 
         <div class="flex justify-between items-end">
