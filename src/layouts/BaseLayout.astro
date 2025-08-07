@@ -3,6 +3,7 @@ import { Icon } from "astro-icon/components";
 import Head from "../components/Head.astro";
 import Navigation from "../components/Navigation.astro";
 import background from "../assets/background.svg";
+import "../styles/global.css";
 
 interface Props {
     title?: string | undefined;
@@ -26,7 +27,7 @@ const { title, description } = Astro.props;
 
         <div class="flex justify-between items-end">
             <div
-                class="shrink-0 sticky bottom-0 h-fit hidden md:flex flex-col justify-center items-center gap-6 px-10"
+                class="shrink-0 sticky bottom-0 h-fit hidden md:flex flex-col justify-center items-center gap-6 px-12"
             >
                 <a
                     title="github"
@@ -64,7 +65,7 @@ const { title, description } = Astro.props;
             </div>
 
             <div
-                class="shrink-0 sticky bottom-0 h-fit hidden md:flex flex-col justify-center items-center gap-6 px-10"
+                class="shrink-0 sticky bottom-0 h-fit hidden md:flex flex-col justify-center items-center gap-6 px-12"
             >
                 <a
                     href="mailto:keshab.chai0@gmail.com"

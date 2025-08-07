@@ -1,21 +1,68 @@
 ---
-const title = "Where I Have Worked";
+const experiences = [
+  {
+    title: "Frontend Developer",
+    company: "Code Himalaya",
+    duration: "Jan 2023 - Present",
+    description: [
+      "Developed and maintained multiple React.js applications, implementing responsive designs and complex UI components",
+      "Collaborated with UX designers to implement pixel-perfect designs and smooth animations",
+      "Improved website performance by 40% through code optimization and implementing lazy loading",
+      "Integrated REST APIs and managed global state using Redux Toolkit and React Query",
+    ],
+    tech: ["React", "TypeScript", "Redux", "TailwindCSS"],
+  },
+];
 ---
 
-<section id="experience">
-  <h2>{title}</h2>
-  <ul>
-    <li>
-      <h3>Job Title at Company Name</h3>
-      <p>Brief description of responsibilities and achievements.</p>
-    </li>
-    <li>
-      <h3>Job Title at Company Name</h3>
-      <p>Brief description of responsibilities and achievements.</p>
-    </li>
-    <li>
-      <h3>Job Title at Company Name</h3>
-      <p>Brief description of responsibilities and achievements.</p>
-    </li>
-  </ul>
+<section
+  id="experience"
+  class="relative z-10 min-h-screen flex items-center py-20"
+>
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl">
+      <h2 class="flex items-center gap-2 text-3xl font-bold text-text mb-12">
+        <span class="font-mono text-primary">02.</span>
+        Where I've Worked
+      </h2>
+
+      <div class="relative border-l border-primary/30 ml-4">
+        {
+          experiences.map((exp) => (
+            <div class="mb-12 ml-6">
+              <span class="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-background bg-primary">
+                <span class="w-3 h-3 rounded-full bg-background" />
+              </span>
+              <div class="space-y-3">
+                <div class="flex flex-wrap items-center gap-x-2">
+                  <h3 class="text-xl font-semibold text-text">
+                    {exp.title}
+                    <span class="text-primary"> @ {exp.company}</span>
+                  </h3>
+                </div>
+                <span class="block font-mono text-sm text-muted">
+                  {exp.duration}
+                </span>
+                <ul class="space-y-2">
+                  {exp.description.map((point) => (
+                    <li class="flex items-start gap-2 text-muted">
+                      <span class="text-primary mt-1.5">▹</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div class="flex flex-wrap gap-2 pt-2">
+                  {exp.tech.map((tech) => (
+                    <span class="px-3 py-1 text-sm text-primary bg-primary/10 rounded-full">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </section>

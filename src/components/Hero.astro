@@ -1,9 +1,9 @@
 ---
-
+const {} = Astro.props;
 ---
 
 <!-- Hero Section -->
-<main
+<section
   class="bg-backgroundx relative z-10 min-h-[calc(100vh-64px)] flex items-center"
 >
   <div class="container mx-auto py-20">
@@ -31,15 +31,4 @@
       </div>
     </div>
   </div>
-
-  <!-- Scroll Indicator -->
-  <div
-    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-60"
-  >
-    <div
-      class="w-6 h-10 border-2 border-border rounded-full flex justify-center"
-    >
-      <div class="w-1 h-3 bg-border rounded-full mt-2 animate-pulse"></div>
-    </div>
-  </div>
-</main>
+</section>

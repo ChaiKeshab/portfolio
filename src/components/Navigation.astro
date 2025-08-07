@@ -11,10 +11,29 @@ const sections = [
 
 <nav>
   <div class="flex items-center justify-between py-4 px-2 md:px-10">
-    <a href="/" class="text-2xl font-medium text-text">
-      <span class="text-primary">C</span>
-      <!-- <span>CHAI</span>
-      <span class="text-primary">KESHAB</span> -->
+    <a
+      href="/"
+      class="group relative md:-left-2 text-2xl font-medium text-text"
+    >
+      <div class="font-extrabold">
+        <svg
+          viewBox="0 0 220 220"
+          xmlns="http://www.w3.org/2000/svg"
+          class="hex-logo"
+        >
+          <polygon
+            points="100,30 173.2,70 173.2,150 100,190 26.8,150 26.8,70"
+            class="hex fill-none origin-center dark:group-hover:drop-shadow-[0_0_10px_var(--color-primary)] stroke-primary group-hover:scale-105 group-hover:brightness-80 dark:group-hover:brightness-140 duration-200 transition-all"
+          ></polygon>
+
+          <text
+            x="100"
+            y="120"
+            class="letter dark:group-hover:drop-shadow-[0_0_10px_var(--color-primary)] dark:group-hover:fill-white fill-primary group-hover:scale-105 group-hover:brightness-80 dark:group-hover:brightness-140 duration-200 transition-all"
+            >C</text
+          >
+        </svg>
+      </div>
     </a>
 
     <!-- Desktop nav -->
@@ -40,7 +59,6 @@ const sections = [
         </a>
       </li>
 
-      <!-- Theme Toggle -->
       <li class="flex justify-center items-center w-fit">
         <button
           id="theme-toggle"
@@ -119,3 +137,23 @@ const sections = [
     })();
   </script>
 </nav>
+
+<style>
+  .hex-logo {
+    width: 59px;
+    height: 59px;
+    cursor: pointer;
+    display: block;
+  }
+
+  .hex {
+    stroke-width: 8;
+  }
+
+  .letter {
+    font-size: 90px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    transform-origin: center;
+  }
+</style>
