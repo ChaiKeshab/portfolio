@@ -4,6 +4,7 @@ import Head from "../components/Head.astro";
 import Navigation from "../components/Navigation.astro";
 import background from "../assets/background.svg";
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
     title?: string | undefined;
@@ -19,6 +20,7 @@ const { title, description } = Astro.props;
 <html lang="en">
     <head>
         <Head title={title} description={description} />
+        <ClientRouter />
     </head>
     <body>
         <img id="background" src={background.src} alt="" fetchpriority="high" />

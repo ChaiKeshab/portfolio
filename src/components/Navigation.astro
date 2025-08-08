@@ -9,41 +9,98 @@ const sections = [
 ];
 ---
 
-<nav>
-  <div class="flex items-center justify-between py-4 px-2 md:px-10">
-    <a
-      href="/"
-      class="group relative md:-left-2 text-2xl font-medium text-text"
+<nav class="sticky top-0 z-50 backdrop-blur-3x">
+  <div class="relative">
+    <div
+      class="hidden md:block absolute w-full h-[150%] bg-background blur-2xl z-10 bottom-3/12"
+      aria-hidden="true"
+      role="presentation"
     >
-      <div class="font-extrabold">
-        <svg
-          viewBox="0 0 220 220"
-          xmlns="http://www.w3.org/2000/svg"
-          class="hex-logo"
-        >
-          <polygon
-            points="100,30 173.2,70 173.2,150 100,190 26.8,150 26.8,70"
-            class="hex fill-none origin-center dark:group-hover:drop-shadow-[0_0_10px_var(--color-primary)] stroke-primary group-hover:scale-105 group-hover:brightness-80 dark:group-hover:brightness-140 duration-200 transition-all"
-          ></polygon>
+    </div>
 
-          <text
-            x="100"
-            y="120"
-            class="letter dark:group-hover:drop-shadow-[0_0_10px_var(--color-primary)] dark:group-hover:fill-white fill-primary group-hover:scale-105 group-hover:brightness-80 dark:group-hover:brightness-140 duration-200 transition-all"
-            >C</text
+    <div class="flex items-center justify-between py-4 px-2 md:pl-10 md:pr-14">
+      <a
+        href="/"
+        class="z-20 group relative md:-left-2 text-2xl font-medium text-text"
+      >
+        <div class="font-extrabold">
+          <svg
+            viewBox="0 0 220 220"
+            xmlns="http://www.w3.org/2000/svg"
+            class="hex-logo"
           >
-        </svg>
-      </div>
-    </a>
+            <polygon
+              points="100,30 173.2,70 173.2,150 100,190 26.8,150 26.8,70"
+              class="hex fill-none origin-center dark:group-hover:drop-shadow-[0_0_10px_var(--color-primary)] stroke-primary group-hover:scale-105 group-hover:brightness-80 dark:group-hover:brightness-140 duration-200 transition-all"
+            ></polygon>
 
-    <!-- Desktop nav -->
-    <ul class="hidden md:flex text-base items-center text-muted">
+            <text
+              x="100"
+              y="120"
+              class="letter dark:group-hover:drop-shadow-[0_0_10px_var(--color-primary)] dark:group-hover:fill-white fill-primary group-hover:scale-105 group-hover:brightness-80 dark:group-hover:brightness-140 duration-200 transition-all"
+              >C</text
+            >
+          </svg>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="z-20 hidden md:flex text-base items-center text-muted">
+        {
+          sections.map((section) => (
+            <li>
+              <a
+                href={section.link}
+                class="px-3 py-4 text-muted hover:text-primary transition-colors duration-300"
+              >
+                {section.name}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a
+            href="#"
+            class="px-3 py-4 text-muted hover:text-primary transition-colors duration-300"
+          >
+            Resume
+          </a>
+        </li>
+
+        <li class="flex justify-center items-center w-fit">
+          <button
+            id="theme-toggle"
+            class="pl-3 hover:text-primary transition duration-300"
+            title="Toggle theme"
+          >
+            <Icon size={25} name="sun" class="block dark:hidden text-muted" />
+            <Icon size={25} name="moon" class="hidden dark:block text-muted" />
+          </button>
+        </li>
+      </ul>
+
+      <button
+        id="menu-toggle"
+        class="md:hidden text-muted text-3xl focus:outline-none"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="sr-only">Toggle menu</span>
+        <Icon name="hamburger" />
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <ul
+      id="mobile-menu"
+      class="hidden flex-col space-y-2 px-4 pb-4 text-muted md:hidden"
+    >
       {
         sections.map((section) => (
           <li>
             <a
               href={section.link}
-              class="px-3 py-4 text-muted hover:text-primary transition-colors duration-300"
+              class="block px-3 py-2 rounded hover:bg-surface hover:text-primary transition"
             >
               {section.name}
             </a>
@@ -53,72 +110,25 @@ const sections = [
       <li>
         <a
           href="#"
-          class="px-3 py-4 text-muted hover:text-primary transition-colors duration-300"
+          class="block px-3 py-2 rounded hover:bg-surface hover:text-primary transition"
         >
           Resume
         </a>
       </li>
-
-      <li class="flex justify-center items-center w-fit">
-        <button
-          id="theme-toggle"
-          class="pl-3 hover:text-primary transition duration-300"
-          title="Toggle theme"
-        >
-          <Icon size={25} name="sun" class="block dark:hidden text-muted" />
-          <Icon size={25} name="moon" class="hidden dark:block text-muted" />
-        </button>
-      </li>
     </ul>
-
-    <button
-      id="menu-toggle"
-      class="md:hidden text-muted text-3xl focus:outline-none"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <span class="sr-only">Toggle menu</span>
-      <Icon name="hamburger" />
-    </button>
   </div>
 
-  <!-- Mobile nav -->
-  <ul
-    id="mobile-menu"
-    class="hidden flex-col space-y-2 px-4 pb-4 text-muted md:hidden"
-  >
-    {
-      sections.map((section) => (
-        <li>
-          <a
-            href={section.link}
-            class="block px-3 py-2 rounded hover:bg-surface hover:text-primary transition"
-          >
-            {section.name}
-          </a>
-        </li>
-      ))
-    }
-    <li>
-      <a
-        href="#"
-        class="block px-3 py-2 rounded hover:bg-surface hover:text-primary transition"
-      >
-        Resume
-      </a>
-    </li>
-  </ul>
-
-  <script is:inline defer>
+  <script is:inline>
     (() => {
-      const toggle = document.getElementById("menu-toggle");
-      const menu = document.getElementById("mobile-menu");
+      function applyTheme() {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
 
-      toggle?.addEventListener("click", () => {
-        const isOpen = menu.classList.contains("hidden");
-        toggle.setAttribute("aria-expanded", String(isOpen));
-        menu.classList.toggle("hidden");
-      });
+      applyTheme();
 
       const themeToggle = document.getElementById("theme-toggle");
       themeToggle?.addEventListener("click", () => {
@@ -131,29 +141,35 @@ const sections = [
         );
       });
 
-      if (localStorage.getItem("theme") === "dark") {
-        document.documentElement.classList.add("dark");
-      }
+      const toggle = document.getElementById("menu-toggle");
+      const menu = document.getElementById("mobile-menu");
+      toggle?.addEventListener("click", () => {
+        const isOpen = menu.classList.contains("hidden");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+        menu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("astro:after-swap", applyTheme);
     })();
   </script>
+
+  <style>
+    .hex-logo {
+      width: 59px;
+      height: 59px;
+      cursor: pointer;
+      display: block;
+    }
+
+    .hex {
+      stroke-width: 8;
+    }
+
+    .letter {
+      font-size: 90px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+      transform-origin: center;
+    }
+  </style>
 </nav>
-
-<style>
-  .hex-logo {
-    width: 59px;
-    height: 59px;
-    cursor: pointer;
-    display: block;
-  }
-
-  .hex {
-    stroke-width: 8;
-  }
-
-  .letter {
-    font-size: 90px;
-    text-anchor: middle;
-    dominant-baseline: middle;
-    transform-origin: center;
-  }
-</style>

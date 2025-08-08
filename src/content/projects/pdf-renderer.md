@@ -1,6 +1,6 @@
 ---
 title: "PDF Renderer Library"
-tags: ["Java", "PDF", "Graphics", "Performance", "Memory-Optimization"]
+tags: ["React", "PDF", "Graphics", "Performance", "Memory-Optimization"]
 image: "/projects/pdf.webp"
 order: 1
 ---
