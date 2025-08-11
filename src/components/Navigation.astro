@@ -1,27 +1,58 @@
 ---
 import { Icon } from "astro-icon/components";
+import background from "../assets/background.svg";
 
 const sections = [
-  { name: "About", link: "#about" },
-  { name: "Experience", link: "#experience" },
-  { name: "Work", link: "#work" },
-  { name: "Contact", link: "#contact" },
+  { name: "About", link: "/#about" },
+  { name: "Experience", link: "/#experience" },
+  { name: "Work", link: "/#work" },
+  { name: "Contact", link: "/#contact" },
 ];
 ---
 
-<nav class="sticky top-0 z-50 backdrop-blur-3x">
-  <div class="relative">
+<style>
+  .hex-logo {
+    width: 59px;
+    height: 59px;
+    cursor: pointer;
+    display: block;
+  }
+
+  .hex {
+    stroke-width: 8;
+  }
+
+  .letter {
+    font-size: 90px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    transform-origin: center;
+  }
+
+  .show-menu {
+    --tw-translate-x: 0;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+    visibility: visible;
+  }
+  .hide-menu {
+    --tw-translate-x: 100%;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+    visibility: hidden;
+  }
+</style>
+
+<nav class="sticky top-0 z-30 backdrop-blur-xl md:backdrop-blur-none">
+  <div class="relative isolate">
     <div
-      class="hidden md:block absolute w-full h-[150%] bg-background blur-2xl z-10 bottom-3/12"
+      class="absolute w-full h-full bg-background blur-2xl z-10 bottom-3/12"
       aria-hidden="true"
-      role="presentation"
     >
     </div>
 
-    <div class="flex items-center justify-between py-4 px-2 md:pl-10 md:pr-14">
+    <div class="flex items-center justify-between py-2 md:py-4 px-4 md:px-10">
       <a
         href="/"
-        class="z-20 group relative md:-left-2 text-2xl font-medium text-text"
+        class="z-20 group relative md:-left-1.5 text-2xl font-medium text-text"
       >
         <div class="font-extrabold">
           <svg
@@ -51,6 +82,7 @@ const sections = [
             <li>
               <a
                 href={section.link}
+                aria-label={`Go to ${section.name} section`}
                 class="px-3 py-4 text-muted hover:text-primary transition-colors duration-300"
               >
                 {section.name}
@@ -60,17 +92,18 @@ const sections = [
         }
         <li>
           <a
-            href="#"
+            href="/keshabChaiResume.pdf"
+            target="_blank"
+            rel="noopener"
             class="px-3 py-4 text-muted hover:text-primary transition-colors duration-300"
           >
             Resume
           </a>
         </li>
-
         <li class="flex justify-center items-center w-fit">
           <button
             id="theme-toggle"
-            class="pl-3 hover:text-primary transition duration-300"
+            class="theme-toggle pl-3 pr-1.5 hover:text-primary transition cursor-pointer duration-300"
             title="Toggle theme"
           >
             <Icon size={25} name="sun" class="block dark:hidden text-muted" />
@@ -80,96 +113,134 @@ const sections = [
       </ul>
 
       <button
-        id="menu-toggle"
-        class="md:hidden text-muted text-3xl focus:outline-none"
+        id="menu-open"
+        class="z-20 md:hidden text-muted text-3xl cursor-pointer focus:outline-none"
         aria-expanded="false"
         aria-controls="mobile-menu"
       >
-        <span class="sr-only">Toggle menu</span>
-        <Icon name="hamburger" />
+        <span class="sr-only">Open menu</span>
+        <Icon size={35} name="hamburger" />
       </button>
     </div>
-
-    <!-- Mobile nav -->
-    <ul
-      id="mobile-menu"
-      class="hidden flex-col space-y-2 px-4 pb-4 text-muted md:hidden"
-    >
-      {
-        sections.map((section) => (
-          <li>
-            <a
-              href={section.link}
-              class="block px-3 py-2 rounded hover:bg-surface hover:text-primary transition"
-            >
-              {section.name}
-            </a>
-          </li>
-        ))
-      }
-      <li>
-        <a
-          href="#"
-          class="block px-3 py-2 rounded hover:bg-surface hover:text-primary transition"
-        >
-          Resume
-        </a>
-      </li>
-    </ul>
   </div>
-
-  <script is:inline>
-    (() => {
-      function applyTheme() {
-        if (localStorage.getItem("theme") === "dark") {
-          document.documentElement.classList.add("dark");
-        } else {
-          document.documentElement.classList.remove("dark");
-        }
-      }
-
-      applyTheme();
-
-      const themeToggle = document.getElementById("theme-toggle");
-      themeToggle?.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark");
-        localStorage.setItem(
-          "theme",
-          document.documentElement.classList.contains("dark")
-            ? "dark"
-            : "light",
-        );
-      });
-
-      const toggle = document.getElementById("menu-toggle");
-      const menu = document.getElementById("mobile-menu");
-      toggle?.addEventListener("click", () => {
-        const isOpen = menu.classList.contains("hidden");
-        toggle.setAttribute("aria-expanded", String(isOpen));
-        menu.classList.toggle("hidden");
-      });
-
-      document.addEventListener("astro:after-swap", applyTheme);
-    })();
-  </script>
-
-  <style>
-    .hex-logo {
-      width: 59px;
-      height: 59px;
-      cursor: pointer;
-      display: block;
-    }
-
-    .hex {
-      stroke-width: 8;
-    }
-
-    .letter {
-      font-size: 90px;
-      text-anchor: middle;
-      dominant-baseline: middle;
-      transform-origin: center;
-    }
-  </style>
 </nav>
+
+<div
+  id="menu-overlay"
+  class="fixed z-40 bg-black/20 backdrop-blur-lg duration-200 inset-0 hidden"
+>
+</div>
+
+<!-- Mobile nav -->
+<aside
+  id="mobile-menu"
+  class="hide-menu bg-background duration-200 fixed right-0 top-0 h-screen overflow-y-auto overflow-x-hidden z-50 flex-col space-y-2 px-4 py-4 w-10/12 shadow-2xl [color-scheme:light] dark:[color-scheme:dark] text-muted md:hidden"
+>
+  <img
+    id="background"
+    src={background.src}
+    aria-hidden="true"
+    fetchpriority="high"
+  />
+
+  <ul class="flex flex-col justify-start items-stretch w-full h-full">
+    <button
+      id="menu-close"
+      class="ml-auto flex pl-4 pt-1 justify-end mb-2 text-muted text-3xl cursor-pointer focus:outline-none"
+    >
+      <span class="sr-only">Close menu</span>
+      <Icon size={35} name="close" />
+    </button>
+    {
+      sections.map((section) => (
+        <li>
+          <a
+            href={section.link}
+            aria-label={`Go to ${section.name} section`}
+            class="menu-close-link active:shadow-[0_0_10px_2px_rgba(0,0,0,0.1)] block text-lg px-3 py-4 text-center rounded hover:bg-surface hover:text-primary transition"
+          >
+            {section.name}
+          </a>
+        </li>
+      ))
+    }
+
+    <li>
+      <a
+        href="/keshabChaiResume.pdf"
+        target="_blank"
+        rel="noopener"
+        aria-label="View Resume PDF"
+        class="menu-close-link active:shadow-[0_0_10px_2px_rgba(0,0,0,0.1)] block text-lg px-3 py-4 text-center rounded hover:bg-surface hover:text-primary transition"
+      >
+        Resume
+      </a>
+    </li>
+
+    <li class="flex-1 flex justify-center items-center">
+      <button
+        id="theme-toggle"
+        class="-translate-y-20 theme-toggle active:shadow-[0_0_10px_2px_rgba(0,0,0,0.1)] block text-lg p-4 aspect-square cursor-pointer text-center rounded hover:bg-surface hover:text-primary transition"
+        title="Toggle theme"
+      >
+        <Icon size={25} name="sun" class="block dark:hidden text-muted" />
+        <Icon size={25} name="moon" class="hidden dark:block text-muted" />
+      </button>
+    </li>
+  </ul>
+</aside>
+
+<script>
+  function setupNavigation() {
+    const root = document.documentElement;
+    const themeToggles = document.querySelectorAll(".theme-toggle");
+    const openBtn = document.getElementById("menu-open");
+    const closeBtn = document.getElementById("menu-close");
+    const overlay = document.getElementById("menu-overlay");
+    const menu = document.getElementById("mobile-menu");
+    const menuCloseLinks = document.querySelectorAll(".menu-close-link");
+
+    // Apply theme on load
+    root.classList.toggle("dark", localStorage.getItem("theme") === "dark");
+
+    themeToggles.forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const isDark = root.classList.toggle("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+      });
+    });
+
+    const initOverflow = document.body.style.overflow;
+
+    function openMenu() {
+      if (menu && overlay && openBtn) {
+        menu.classList.add("show-menu");
+        menu.classList.remove("hide-menu");
+        overlay.classList.remove("hidden");
+        openBtn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+    }
+
+    function closeMenu() {
+      if (menu && overlay && openBtn) {
+        menu.classList.remove("show-menu");
+        menu.classList.add("hide-menu");
+        overlay.classList.add("hidden");
+        openBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = initOverflow;
+      }
+    }
+
+    openBtn?.addEventListener("click", openMenu);
+    closeBtn?.addEventListener("click", closeMenu);
+    overlay?.addEventListener("click", closeMenu);
+    menuCloseLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+  }
+
+  setupNavigation();
+  document.addEventListener("astro:after-swap", setupNavigation);
+  document.addEventListener("astro:after-navigation", setupNavigation);
+</script>

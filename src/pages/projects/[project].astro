@@ -16,7 +16,9 @@ const { Content } = await project.render();
 
 <BaseLayout title={project.data.title}>
     <main class="min-h-screen container py-20">
-        <article class="max-w-4xl w-full prose prose-lg dark:prose-invert">
+        <article
+            class="max-w-4xl mx-auto w-full prose prose-lg dark:prose-invert"
+        >
             <header class="mb-8">
                 <h1 class="text-5xl font-bold mb-4 text-primary">
                     {project.data.title}
@@ -31,12 +33,6 @@ const { Content } = await project.render();
                         ))
                     }
                 </div>
-
-                <img
-                    src={project.data.image}
-                    alt={project.data.title}
-                    class="w-full rounded-lg shadow-lg border border-border"
-                />
             </header>
 
             <section

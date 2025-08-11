@@ -23,7 +23,12 @@ const { title, description } = Astro.props;
         <ClientRouter />
     </head>
     <body>
-        <img id="background" src={background.src} alt="" fetchpriority="high" />
+        <img
+            id="background"
+            src={background.src}
+            aria-hidden="true"
+            fetchpriority="high"
+        />
 
         <Navigation />
 
@@ -38,6 +43,7 @@ const { title, description } = Astro.props;
                     rel="noopener noreferrer"
                     class="hover:scale-110 duration-200 text-text hover:text-primary"
                 >
+                    <span class="sr-only">Github</span>
                     <Icon size={24} name="github" />
                 </a>
                 <a
@@ -47,6 +53,7 @@ const { title, description } = Astro.props;
                     rel="noopener noreferrer"
                     class="hover:scale-110 duration-200 text-text hover:text-primary"
                 >
+                    <span class="sr-only">Linkedin</span>
                     <Icon size={24} name="linkedin" />
                 </a>
                 <a
@@ -56,6 +63,7 @@ const { title, description } = Astro.props;
                     rel="noopener noreferrer"
                     class="hover:scale-110 duration-200 text-text hover:text-primary"
                 >
+                    <span class="sr-only">Twitter</span>
                     <Icon size={24} name="twitter" />
                 </a>
 
@@ -69,13 +77,13 @@ const { title, description } = Astro.props;
             <div
                 class="shrink-0 sticky bottom-0 h-fit hidden md:flex flex-col justify-center items-center gap-6 px-12"
             >
-                <a
+                <!-- <a
                     href="mailto:keshab.chai0@gmail.com"
                     style={{ writingMode: "vertical-rl" }}
                     class="hover:-translate-y-1 duration-200 text-text hover:text-primary"
                 >
                     keshab.chai0@gmail.com
-                </a>
+                </a> -->
                 <div class="w-[1px] h-24 bg-text"></div>
             </div>
         </div>

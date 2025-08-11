@@ -1,8 +1,27 @@
 ---
-
+const techList = [
+  { name: "JavaScript (ES6+)", desc: "Modern language features and syntax" },
+  { name: "TypeScript", desc: "Typed superset of JavaScript for safer code" },
+  { name: "React.js / Next.js", desc: "Component-based UIs & SSR apps" },
+  {
+    name: "Redux Toolkit / RTK Query",
+    desc: "Scalable state & data management",
+  },
+  { name: "TanStack Query", desc: "Data synchronization and caching" },
+  { name: "Tailwind CSS", desc: "Utility-first CSS framework" },
+  {
+    name: "REST & WebSocket APIs",
+    desc: "Standard and real-time communication",
+  },
+  { name: "Apache ECharts", desc: "Enterprise data visualization" },
+  {
+    name: "Ant Design (antd)",
+    desc: "Enterprise-grade UI components for React",
+  },
+];
 ---
 
-<section id="about" class="relative min-h-screen flex items-center py-20">
+<section id="about" class="min-h-screen flex items-center py-20">
   <div class="container mx-auto px-4">
     <div class="max-w-4xl">
       <h2 class="flex items-center gap-2 text-3xl font-bold text-text mb-8">
@@ -12,47 +31,49 @@
 
       <div class="space-y-4 text-muted">
         <p>
-          Hello! My name is Keshab and I enjoy creating things that live on the
-          internet. My interest in web development started back in 2020 when I
-          decided to try customizing HTML & CSS — turns out it ignited a deep
-          passion for web development!
+          Hi! I'm Keshab, and I love building things on the web. My journey into
+          web development began in 2020 when I started experimenting with HTML
+          and CSS, which sparked a real passion for creating on the internet!
         </p>
-
         <p>
-          Fast-forward to today, and I've had the privilege of working on
-          diverse projects. My main focus these days is building accessible,
-          inclusive products and digital experiences.
+          Since then, I've been fortunate to work on a variety of projects, with
+          a strong focus on developing scalable, enterprise-level applications.
+          I’m passionate about crafting accessible and inclusive digital
+          products and experiences that serve diverse users.
+        </p>
+        <p>
+          Here are some of the technologies I’ve been working with recently:
         </p>
 
-        <p>Here are a few technologies I've been working with recently:</p>
-
-        <ul class="grid grid-cols-2 md:grid-cols-3 gap-2 mt-4">
-          <li class="flex items-center gap-2">
-            <span class="text-primary">▹</span>
-            JavaScript (ES6+)
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-primary">▹</span>
-            TypeScript
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-primary">▹</span>
-            React
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-primary">▹</span>
-            Next.js
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-primary">▹</span>
-            Node.js
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-primary">▹</span>
-            Tailwind CSS
-          </li>
+        <ul
+          class="grid grid-cols-[repeat(auto-fill,minmax(235px,1fr))] gap-y-0 md:gap-y-2 gap-2 mt-4"
+        >
+          {
+            techList.map(({ name, desc }) => (
+              <li
+                class="relative flex items-center gap-2 cursor-default rounded px-2 py-1
+             text-muted hover:text-primary focus-within:text-primary transition
+             transform hover:scale-105 focus-within:scale-105 outline-none"
+                title={desc}
+              >
+                <span class="text-primary select-none">▹</span>
+                <span>{name}</span>
+              </li>
+            ))
+          }
         </ul>
       </div>
+    </div>
+
+    <div class="w-full h-fit flex justify-center items-center mt-10">
+      <a
+        href="/keshabChaiResume.pdf"
+        target="_blank"
+        rel="noopener"
+        class="mx-auto px-6 py-2 text-primary border border-primary rounded transition-all duration-200 ease-out hover:scale-105 hover:brightness-140 active:scale-95"
+      >
+        View Resume
+      </a>
     </div>
   </div>
 </section>

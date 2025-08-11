@@ -1,13 +1,16 @@
 ---
 title: "Multi-Tenant Messaging Platform"
 tags: ["React", "WebSocket", "STOMP", "Gemini AI", "Multi-Tenant"]
-image: "/projects/chat.webp"
-order: 1
+links:
+    github: "https://github.com/chaikeshab/chat-platform"
+    live: "https://chat-platform.demo.com"
 ---
 
 ### 🧠 Project Overview
 
 Developed a robust messaging platform with tenant-based isolation for businesses using STOMP over WebSocket. Integrated Gemini AI for smart replies and contextual lead capture.
+
+![A starry night sky.](../../assets/test.webp)
 
 ### 🔧 Key Features
 
