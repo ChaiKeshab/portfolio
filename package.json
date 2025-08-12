@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "pnpm run build:resume && astro dev --host",
-    "build:resume": "typst compile resume/myResumeName.typ public/keshabChaiResume.pdf",
+    "build:resume": "npx typst-cli compile resume/myResumeName.typ public/keshabChaiResume.pdf",
     "build": "pnpm run build:resume && astro build",
     "preview": "astro preview",
     "astro": "astro"
