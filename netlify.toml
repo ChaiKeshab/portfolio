@@ -1,0 +1,10 @@
+[build]
+command = "npm install -g pnpm@10 && pnpm install && pnpm run build"
+publish = "dist"
+
+[build.environment]
+NODE_VERSION = "22"
+PNPM_VERSION = "10"
+
+[[plugins]]
+package = "netlify-plugin-pnpm"

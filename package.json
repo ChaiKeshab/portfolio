@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "pnpm run build:resume && astro dev --host",
     "build:resume": "typst compile resume/myResumeName.typ public/keshabChaiResume.pdf",
-    "build": "npm run build:resume && astro build",
+    "build": "pnpm run build:resume && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
