@@ -44,7 +44,7 @@ Results-driven React.js developer with nearly 2 years building scalable, user-fo
 
 == Skills
 - *Programming Languages*: JavaScript (ES6+), TypeScript, HTML/CSS, Python
-- *Frameworks & Libraries*: React.js, Next.js, Redux Toolkit, RTK Query, TanStack Query, Tailwind CSS, Vitest, Ant Design, Apache ECharts
+- *Frameworks & Libraries*: React.js, Astro, Next.js, Redux Toolkit, RTK Query, TanStack Query, Tailwind CSS, Vitest, Ant Design, Apache ECharts
 - *Tools & Methodologies*: Git, GitHub, GitLab, Firebase, Jira, Figma, Postman, SEO, Responsive Web Design
 - *APIs & Integrations*: WebSocket, STOMP (Simple Text Oriented Messaging Protocol), REST APIs, Gemini AI, Social Media Integration (Facebook, Instagram, WhatsApp)
 
