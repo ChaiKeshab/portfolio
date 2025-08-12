@@ -1,35 +1,73 @@
 ---
 import { Icon } from "astro-icon/components";
-
-const githubUrl = "https://github.com/yourusername";
-const linkedinUrl = "https://linkedin.com/in/yourusername";
-const twitterUrl = "https://linkedin.com/in/yourusername";
+import { socials } from "../data/socials";
 ---
 
-<!-- svg files as code instead of previews
+<footer class="pt-16 pb-8 px-4 md:px-12 lg:px-4">
+  <div class="container mx-auto">
+    <div class="flex flex-col items-center gap-4">
+      <div class="flex items-center justify-center gap-6">
+        <a
+          title="github"
+          href={socials.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="h-fit p-2 rounded-lg hover:scale-110 duration-200 text-text hover:text-primary transition-all"
+        >
+          <span class="sr-only">Github</span>
+          <Icon size={24} name="github" />
+        </a>
+        <a
+          title="linkedin"
+          href={socials.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="h-fit p-2 rounded-lg hover:scale-110 duration-200 text-text hover:text-primary transition-all"
+        >
+          <span class="sr-only">Linkedin</span>
+          <Icon size={24} name="linkedin" />
+        </a>
+        <a
+          title="twitter"
+          href={socials.twitter}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="h-fit p-2 rounded-lg hover:scale-110 duration-200 text-text hover:text-primary transition-all"
+        >
+          <span class="sr-only">Twitter</span>
+          <Icon size={24} name="twitter" />
+        </a>
+        <a
+          title="email"
+          href={`mailto:${socials.email}?subject=Hello%20from%20your%20website!`}
+          class="h-fit p-2 rounded-lg hover:scale-110 duration-200 text-text hover:text-primary transition-all"
+        >
+          <span class="sr-only">Email</span>
+          <Icon size={31} name="mail" />
+        </a>
+      </div>
 
-Go to Settings
-Search for: workbench.editorAssociations
-Click Add Item:
+      <button
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        class="cursor-pointer flex items-center gap-2 text-subtle hover:text-primary transition-colors duration-200 font-mono text-sm"
+        aria-label="Back to top"
+      >
+        <span>Back to top</span>
+        <Icon size={18} name="uparrow" />
+      </button>
 
-Key: *.svg
-Value: default
- -->
-<footer class="social-links">
-  <Icon size={24} class={` text-red-600`} name="github" />
-  <Icon size={24} class={` text-red-600`} name="linkedin" />
-  <Icon size={24} class={` text-red-600`} name="twitter" />
+      <div class="text-center pt-6">
+        <p class="text-sm text-subtle">
+          Built with <span class="text-accent font-semibold">Astro</span> &
+          <span class="text-accent font-semibold">Tailwind CSS</span>
+        </p>
+      </div>
 
-  <a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub</a>
-  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn</a>
-  <a href={twitterUrl} target="_blank" rel="noopener noreferrer">Twitter</a>
-</footer>
-
-<!-- Scroll Indicator -->
-<div
-  class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-60"
->
-  <div class="w-6 h-10 border-2 border-border rounded-full flex justify-center">
-    <div class="w-1 h-3 bg-border rounded-full mt-2 animate-pulse"></div>
+      <div class="w-full text-center">
+        <p class="text-xs text-subtle">
+          © {new Date().getFullYear()} Keshab Chai. All rights reserved.
+        </p>
+      </div>
+    </div>
   </div>
-</div>
+</footer>

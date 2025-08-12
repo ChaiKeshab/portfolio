@@ -13,6 +13,14 @@
 
 @font-face {
     font-family: 'Inter';
+    src: url('/fonts/inter-semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
     src: url('/fonts/inter-bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
@@ -24,7 +32,7 @@
     --color-primary: oklch(65% 0.18 260);
     --color-secondary: oklch(75% 0.10 130);
     --color-accent: oklch(85% 0.13 40);
-    --color-background: oklch(98% 0.005 250);
+    --color-background: oklch(95% 0 89);
     --color-surface: oklch(94% 0.01 250);
     --color-border: oklch(84% 0.01 250);
     --color-text: oklch(20% 0.01 250);

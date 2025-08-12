@@ -3,12 +3,14 @@ const {} = Astro.props;
 ---
 
 <section class="relative min-h-[calc(100vh-64px)] flex items-center">
-  <div class="container mx-auto px-4 py-20 mb-32">
+  <div class="container mx-auto px-4 md:px-12 lg:px-4 py-20 mb-32">
     <div class="hero-content space-y-6">
       <div class="font-mono text-primary text-lg animate-fade-in-up">
         Hi, my name is
       </div>
-      <h1 class="text-6xl font-bold text-text animate-fade-in-up-delay-1">
+      <h1
+        class="text-5xl md:text-6xl font-bold text-text animate-fade-in-up-delay-1"
+      >
         Keshab Chai
       </h1>
       <h2
@@ -29,3 +31,11 @@ const {} = Astro.props;
     </div>
   </div>
 </section>
+
+<div
+  class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-60"
+>
+  <div class="w-6 h-10 border-2 border-border rounded-full flex justify-center">
+    <div class="w-1 h-3 bg-border rounded-full mt-2 animate-pulse"></div>
+  </div>
+</div>

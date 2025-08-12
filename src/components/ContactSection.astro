@@ -1,9 +1,44 @@
 ---
+import { socials } from "../data/socials";
 
+const {} = Astro.props;
 ---
 
-<section id="contact" class="contact-section">
-  <h2>Get in Touch</h2>
-  <p>If you would like to reach out, feel free to contact me via email:</p>
-  <a href="mailto:your-email@example.com">your-email@example.com</a>
+<section id="contact" class="min-h-screen flex items-center py-20">
+  <div class="container mx-auto px-4 md:px-12 lg:px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2
+        class="flex items-center justify-center gap-2 text-2xl md:text-3xl font-bold text-text mb-8"
+      >
+        <span class="font-mono text-primary">04.</span>
+        What's Next?
+      </h2>
+
+      <h3 class="text-4xl md:text-5xl font-bold text-text mb-8">
+        Get In Touch
+      </h3>
+
+      <div class="space-y-6 text-muted leading-relaxed mb-12">
+        <p>
+          I'm always interested in new opportunities and exciting projects.
+          Whether you have a question, want to collaborate, or just want to say
+          hi, I'll do my best to get back to you!
+        </p>
+        <p>
+          Currently, I'm open to discussing freelance projects, full-time
+          positions, and interesting collaborations. Let's create something
+          amazing together.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a
+          href={`mailto:${socials.email}?subject=Hello%20from%20your%20website!`}
+          class="px-8 py-3 text-primary border border-primary rounded transition-all duration-200 ease-out hover:scale-105 hover:brightness-140 active:scale-95"
+        >
+          Say Hello
+        </a>
+      </div>
+    </div>
+  </div>
 </section>

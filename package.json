@@ -3,8 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev --host",
-    "build": "astro build",
+    "dev": "pnpm run build:resume && astro dev --host",
+    "build": "pnpm run build:resume && astro build",
+    "build:resume": "typst compile resume/keshabChaiResume.typ public/keshabChaiResume.pdf",
     "preview": "astro preview",
     "astro": "astro"
   },
