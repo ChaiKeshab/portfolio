@@ -91,7 +91,7 @@ const otherProjects = await getCollection("otherProjects");
                       </svg>
                     </a> */}
                     <a
-                      href={`/projects/${project.id}`}
+                      href={`/projects/${project.slug}`}
                       class="text-muted hover:text-primary transition-colors cursor-pointer"
                     >
                       <span class="sr-only">Live Demo</span>
@@ -135,7 +135,7 @@ const otherProjects = await getCollection("otherProjects");
               .slice(0, 6)
               .map((project) => (
                 <ProjectCard
-                  id={project.id}
+                  id={project.slug}
                   title={project.data.title}
                   desc={project.data.desc}
                   tags={project.data.tags}
@@ -151,7 +151,7 @@ const otherProjects = await getCollection("otherProjects");
               <div class="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-3 ">
                 {otherProjects.slice(6).map((project) => (
                   <ProjectCard
-                    id={project.id}
+                    id={project.slug}
                     title={project.data.title}
                     desc={project.data.desc}
                     tags={project.data.tags}

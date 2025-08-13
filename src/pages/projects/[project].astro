@@ -8,7 +8,7 @@ export async function getStaticPaths() {
 
     const allProjects = [...projects, ...otherProjects];
     return allProjects.map((project) => ({
-        params: { project: project.id },
+        params: { project: project.slug },
         props: { project },
     }));
 }
