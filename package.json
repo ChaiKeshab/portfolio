@@ -2,6 +2,14 @@
   "name": "portfolio",
   "type": "module",
   "version": "0.0.1",
+  "description": "Personal portfolio built with Astro",
+  "author": {
+    "name": "Keshab Chai",
+    "email": "keshab.chai0@gmail.com",
+    "url": "https://www.chaikeshab.com.np"
+  },
+  "license": "MIT",
+  "homepage": "https://www.chaikeshab.com.np",
   "scripts": {
     "dev": "pnpm run build:resume && astro dev --host",
     "build": "astro build",
@@ -19,5 +27,9 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChaiKeshab/portfolio.git"
   }
 }
