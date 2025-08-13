@@ -1,5 +1,6 @@
 ---
 title: "PDF Generation with React-PDF-Renderer"
+desc: "React proof-of-concept for dynamic PDF generation with reusable templates and CORS-safe image handling."
 tags: ["React", "TypeScript", "PDF", "react-pdf-renderer", "React Native Style"]
 links:
   github: "https://github.com/ChaiKeshab/Pdf-with-react-pdf-renderer"

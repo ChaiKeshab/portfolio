@@ -1,11 +1,13 @@
 ---
 import { getCollection } from "astro:content";
+import ProjectCard from "./ProjectCard.astro";
 
-const projects = await getCollection("projects");
+// const projects = await getCollection("projects");
+const otherProjects = await getCollection("otherProjects");
 ---
 
-<section id="work" class="relative min-h-screen flex items-center py-20">
-  <div class="container mx-auto px-4 md:px-12 lg:px-4">
+<section id="projects" class="py-20">
+  <!-- <div class="min-h-screen container mx-auto px-2 md:px-12 lg:px-4">
     <div class="max-w-4xl">
       <h2
         class="flex items-center gap-2 text-2xl md:text-3xl font-bold text-text mb-12"
@@ -115,5 +117,112 @@ const projects = await getCollection("projects");
         }
       </div>
     </div>
+  </div> -->
+
+  <div class="min-h-screen container mx-auto px-2 md:px-12 lg:px-4">
+    <div class="">
+      <h2
+        class="flex items-center gap-2 text-2xl md:text-3xl font-bold text-text mb-12"
+      >
+        <span class="font-mono text-primary">03.</span>
+        Some Things I've Built
+      </h2>
+
+      <div class="space-y-3 mb-16">
+        <div class="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-3">
+          {
+            otherProjects
+              .slice(0, 6)
+              .map((project) => (
+                <ProjectCard
+                  id={project.id}
+                  title={project.data.title}
+                  desc={project.data.desc}
+                  tags={project.data.tags}
+                  links={project.data.links}
+                />
+              ))
+          }
+        </div>
+
+        {
+          otherProjects.length > 6 && (
+            <div id="more-projects" class="hidden">
+              <div class="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-3 ">
+                {otherProjects.slice(6).map((project) => (
+                  <ProjectCard
+                    id={project.id}
+                    title={project.data.title}
+                    desc={project.data.desc}
+                    tags={project.data.tags}
+                    links={project.data.links}
+                  />
+                ))}
+              </div>
+            </div>
+          )
+        }
+
+        {
+          otherProjects.length > 6 && (
+            <div class="text-center mt-12">
+              <button
+                id="show-more-btn"
+                class="px-6 py-3 text-primary border border-primary rounded transition-all duration-200 ease-out hover:scale-105 hover:brightness-140 active:scale-95"
+              >
+                Show More
+              </button>
+            </div>
+          )
+        }
+      </div>
+
+      <!-- <div class="mt-20 text-center">
+        <h3 class="text-2xl font-bold text-text mb-4">
+          Other Noteworthy Projects
+        </h3>
+        <p class="text-muted mb-8">
+          A collection of smaller projects and experiments
+        </p>
+
+        <a
+          href="/archive"
+          class="inline-flex items-center gap-2 text-primary hover:text-accent transition-colors duration-200"
+        >
+          <span>View the archive</span>
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div> -->
+    </div>
   </div>
 </section>
+
+<script>
+  function toggleViewMore() {
+    const showMoreBtn = document.getElementById("show-more-btn");
+    const moreProjects = document.getElementById("more-projects");
+
+    if (showMoreBtn && moreProjects) {
+      showMoreBtn.addEventListener("click", () => {
+        moreProjects.classList.toggle("hidden");
+        showMoreBtn.textContent = moreProjects.classList.contains("hidden")
+          ? "Show More"
+          : "Show Less";
+      });
+    }
+  }
+
+  toggleViewMore();
+  document.addEventListener("astro:after-swap", toggleViewMore);
+</script>

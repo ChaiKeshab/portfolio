@@ -1,5 +1,6 @@
 ---
 title: "Multi-Tenant Messaging Platform"
+desc: "desc"
 tags: ["React", "WebSocket", "STOMP", "Gemini AI", "Multi-Tenant"]
 links:
     github: "https://github.com/chaikeshab/chat-platform"

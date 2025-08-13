@@ -2,19 +2,150 @@
 interface Props {
     title?: string | undefined;
     description?: string | undefined;
+    keywords?: string | undefined;
+    ogImage?: string | undefined;
+    canonicalUrl?: string | undefined;
 }
 
 const {
-    title = "Chai Keshab: Personal Site",
-    description = "The personal site of Chai Keshab, a software engineer and web developer.",
+    title = "Chai Keshab - Software Engineer & Web Developer Portfolio",
+    description = `Results-driven React.js developer with nearly 2 years building scalable, user-focused web applications. Specializes in multitenant architectures, real-time communication systems, and complex frontend migrations. Proven track record of delivering measurable business impact through modern JavaScript frameworks and cross-functional collaboration.`,
+    keywords = "Chai Keshab, Chai, Keshab, Keshab Chai, software engineer, web developer, full stack developer, frontend developer, backend developer, React developer, JavaScript developer, TypeScript, Node.js, portfolio, web design, responsive design, HTML, CSS, MongoDB, SQL, API development, modern web technologies, programming, coding, software development, tech portfolio, developer resume, Nepal developer, software consultant, web applications, mobile responsive, UI/UX, database design, cloud computing, DevOps, Astro, Next.js, Vue.js, Angular, Express.js, REST API, GraphQL, Git, GitHub, agile development, software architecture, clean code, performance optimization, SEO optimization, accessibility, WCAG",
+    ogImage = "/og-image.webp",
+    canonicalUrl = Astro.url.href,
 } = Astro.props;
+
+const siteUrl = "https://chaikeshab.com.np";
 ---
 
 <meta charset="UTF-8" />
-<meta name="description" property="og:description" content={description} />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="generator" content={Astro.generator} />
+<meta
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+/>
+<meta name="author" content="Chai Keshab" />
+<meta name="language" content="en" />
+<meta
+    name="theme-color"
+    content="oklch(65% 0.18 260)"
+    media="(prefers-color-scheme: light)"
+/>
+<meta
+    name="theme-color"
+    content="oklch(70% 0.17 240)"
+    media="(prefers-color-scheme: dark)"
+/>
+
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Chai Keshab Portfolio" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={`${siteUrl}${ogImage}`} />
+<meta
+    property="og:image:alt"
+    content="Chai Keshab - Software Engineer & Web Developer Portfolio"
+/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="1200" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
+<meta
+    name="twitter:image:alt"
+    content="Chai Keshab - Software Engineer & Web Developer Portfolio"
+/>
+<meta name="twitter:creator" content="@Chai2916" />
+<meta name="twitter:site" content="@Chai2916" />
+
+<meta property="article:author" content="Keshab Chai" />
+<meta property="profile:first_name" content="Keshab" />
+<meta property="profile:last_name" content="Chai" />
+
+<!-- Additional Schema.org for Rich Snippets -->
+<script is:inline type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Keshab Chai",
+        "email": "keshab.chai0@gmail.com",
+        "url": "${siteUrl}",
+        "image": "${siteUrl}${ogImage}",
+        "sameAs": [
+            "https://github.com/ChaiKeshab",
+            "https://linkedin.com/in/keshab-chai/",
+            "https://x.com/Chai2916"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kathmandu",
+            "addressCountry": "Nepal"
+        },
+        "jobTitle": "Software Developer",
+        "description": "${description}",
+        "skills": [
+            "JavaScript (ES6+)",
+            "TypeScript",
+            "HTML/CSS",
+            "Python",
+            "React.js",
+            "Astro",
+            "Next.js",
+            "Redux Toolkit",
+            "RTK Query",
+            "TanStack Query",
+            "Tailwind CSS",
+            "Vitest",
+            "Ant Design",
+            "Apache ECharts",
+            "Git",
+            "GitHub",
+            "GitLab",
+            "Firebase",
+            "Jira",
+            "Figma",
+            "Postman",
+            "SEO",
+            "Responsive Web Design",
+            "WebSocket",
+            "STOMP",
+            "REST APIs",
+            "Gemini AI",
+            "Social Media Integration"
+        ],
+        "workExperience": [
+            {
+                "@type": "Organization",
+                "name": "AusNep IT Solution Pvt. Ltd.",
+                "roleName": "React.js Developer",
+                "startDate": "2023-10",
+                "endDate": "Present",
+                "location": "Sydney, New South Wales (Remote)"
+            }
+        ]
+    }
+</script>
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
 
 <link
     rel="preload"
@@ -23,7 +154,6 @@ const {
     type="font/woff2"
     crossorigin="anonymous"
 />
-
 <link
     rel="preload"
     href="/fonts/inter-bold.woff2"
@@ -31,7 +161,6 @@ const {
     type="font/woff2"
     crossorigin="anonymous"
 />
-
 <link
     rel="preload"
     href="/fonts/inter-semibold.woff2"
@@ -40,16 +169,23 @@ const {
     crossorigin="anonymous"
 />
 
-<title>{title}</title>
+<link rel="sitemap" href="/sitemap-index.xml" />
 
-<!-- <link rel="sitemap" href="/sitemap-index.xml" /> -->
+<!-- DNS Prefetch for external resources -->
+<link rel="dns-prefetch" href="//github.com" />
+<link rel="dns-prefetch" href="//linkedin.com" />
 
-<!-- <meta property="og:title" content="My New Astro Website" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://www.example.com/" />
-<meta property="og:description" content="Welcome to my new Astro site!" />
-<meta
-    property="og:image"
-    content="https://www.example.com/_astro/seo-banner.BZD7kegZ.webp"
-/>
-<meta property="og:image:alt" content="" /> -->
+<!-- Security Headers -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+<meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+
+<!-- Performance Hints -->
+<meta name="format-detection" content="telephone=no" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="Chai Keshab" />
+
+<!-- Copyright -->
+<meta name="copyright" content="© 2025 Chai Keshab. All rights reserved." />

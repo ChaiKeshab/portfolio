@@ -5,7 +5,7 @@ import background from "../assets/background.svg";
 const sections = [
   { name: "About", link: "/#about" },
   { name: "Experience", link: "/#experience" },
-  { name: "Work", link: "/#work" },
+  { name: "Projects", link: "/#projects" },
   { name: "Contact", link: "/#contact" },
 ];
 ---
@@ -45,7 +45,7 @@ const sections = [
   <nav>
     <div class="relative isolate">
       <div
-        class="absolute w-full h-full bg-background blur-3xl z-10 bottom-3/12"
+        class="absolute w-full h-full bg-gradient-to-b from-background to-background/80 blur-2xl z-10 bottom-3/12"
         aria-hidden="true"
       >
       </div>
@@ -200,11 +200,11 @@ const sections = [
     <li class="flex-1 flex justify-center items-center">
       <button
         id="theme-toggle"
-        class="-translate-y-20 theme-toggle active:shadow-[0_0_10px_2px_rgba(0,0,0,0.1)] block text-lg p-4 aspect-square cursor-pointer text-center rounded hover:bg-surface hover:text-primary transition"
+        class="-translate-y-20 rounded-full theme-toggle active:shadow-[0_0_10px_2px_rgba(0,0,0,0.1)] block text-lg p-4 aspect-square cursor-pointer text-center hover:bg-surface hover:text-primary transition"
         title="Toggle theme"
       >
-        <Icon size={25} name="sun" class="hidden dark:block text-muted" />
-        <Icon size={25} name="moon" class="block dark:hidden text-muted" />
+        <Icon size={35} name="sun" class="hidden dark:block text-muted" />
+        <Icon size={35} name="moon" class="block dark:hidden text-muted" />
       </button>
     </li>
   </ul>
@@ -262,5 +262,5 @@ const sections = [
 
   setupNavigation();
   document.addEventListener("astro:after-swap", setupNavigation);
-  document.addEventListener("astro:after-navigation", setupNavigation);
+  // document.addEventListener("astro:after-navigation", setupNavigation);
 </script>
