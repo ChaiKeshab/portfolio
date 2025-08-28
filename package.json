@@ -6,12 +6,14 @@
   "author": {
     "name": "Keshab Chai",
     "email": "keshab.chai0@gmail.com",
-    "url": "https://www.chaikeshab.com.np"
+    "url": "https://chaikeshab.com.np"
   },
   "license": "MIT",
-  "homepage": "https://www.chaikeshab.com.np",
+  "homepage": "https://chaikeshab.com.np",
   "scripts": {
-    "dev": "pnpm run build:resume && astro dev --host",
+    "dev": "pnpm run build:resume && pnpm exec astro dev --host",
+    "dev:fetch": "pnpm exec node scripts/fetch-readmes.js && pnpm run build:resume && pnpm exec astro dev --host",
+    "prebuild": "node scripts/fetch-readmes.js",
     "build": "astro build",
     "build:resume": "typst compile resume/keshabChaiResume.typ public/keshabChaiResume.pdf",
     "preview": "astro preview",
@@ -22,6 +24,7 @@
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.11.0",
     "astro-icon": "^1.1.5",
+    "node-fetch": "^3.3.2",
     "sharp": "^0.34.3",
     "tailwindcss": "^4.1.11"
   },

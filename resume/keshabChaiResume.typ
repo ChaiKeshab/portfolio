@@ -43,17 +43,17 @@ React Developer and Frontend Engineer specializing in scalable web development, 
   dates: "10/2023 - Present",
 )
 
-- Architected and rebuilt core systems where legacy solutions were unscalable or broken, ensuring maintainability and team productivity.
-- Introduced TanStack Query to replace fragile Redux Observable/Thunk setups, reducing boilerplate and standardizing API integration.
-- Migrated projects from JavaScript to strict TypeScript (no `any`), improving long-term reliability and developer velocity.
-- Built a Google Drive–like file system entirely from scratch, fixing broken navigation and storage logic in a legacy implementation.
 - Collaborated with a team of 2 backend engineers to design and deliver a scalable e-commerce platform. Started as a single-tenant build, later adapted for admin-controlled theming and module toggling, and re-architected into a multi-tenant platform designed for unlimited storefronts, with automated onboarding and centralized backend infrastructure.
+- Built OpenAI-powered voice agents using both traditional STT→LLM→TTS pipeline (Whisper-1, GPT-4o-mini, TTS-1) and cutting-edge real-time API (GPT-4o-mini-realtime-preview) with WebRTC for live bidirectional conversations and real-time transcription via GPT-4o-mini-transcribe.
+- Built a Google Drive–like file system entirely from scratch, fixing broken navigation and storage logic in a legacy implementation.
 - Implemented real-time socket systems (STOMP/WebSocket) for the first time at company, enabling live chat, tenant updates, and notifications.
+- Refactored a core service-listing feature that was blocking shareable URLs and marketing campaigns. Re-architected flow to use route-based state, making forms modular, reusable, and sharable.
+- Migrated projects from JavaScript to strict TypeScript (no `any`), improving long-term reliability and developer velocity.
 - Partnered with backend to design a secure Stripe payments flow with saved details, replacing insecure or portal-based solutions.
+- Introduced TanStack Query to replace fragile Redux Observable/Thunk setups, reducing boilerplate and standardizing API integration.
 - Developed a responsive CRM/Dashboard layout with persistent menu states and proper page-level scrolling, replacing broken UI patterns.
 - Improved frontend security by auditing and disabling source map leakage, preventing code exposure in production.
-- Refactored a core service-listing feature that was blocking shareable URLs and marketing campaigns. Re-architected flow to use route-based state, making forms modular, reusable, and sharable.
-- Researched and prototyped an OpenAI-powered voice agent, testing multiple approaches (Web Speech API, VAD, WebRTC, HTTP vs. SDK) and delivered a functional MVP using Whisper-1 (STT), GPT-4o-mini (context), and TTS-1 (speech).
+- Architected and rebuilt core systems where legacy solutions were unscalable or broken, ensuring maintainability and team productivity.
 
 == Education
 #edu(

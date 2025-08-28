@@ -15,9 +15,9 @@ interface Props {
 const { id, title, desc, tags, links } = Astro.props;
 ---
 
-<a href={`/projects/${id}`} class="group w-full h-full">
+<div class="relative group w-full h-full">
     <div
-        class="w-full h-full flex flex-col gap-3 justify-start items-stretch p-6 bg-surface/60 border border-border rounded-lg hover:shadow-lg hover:shadow-primary/10 transition-all duration-200 hover:-translate-y-1"
+        class="w-full h-full flex flex-col gap-3 justify-start items-stretch p-6 bg-surface/90 border border-border rounded-lg peer-hover:shadow-lg peer-hover:shadow-primary/10 transition-all duration-200 peer-hover:-translate-y-1"
     >
         <div class="flex items-start justify-between">
             <div class="flex items-center gap-3">
@@ -25,46 +25,64 @@ const { id, title, desc, tags, links } = Astro.props;
                     <Icon size={48} name="folder" />
                 </div>
             </div>
-
+            <a
+                href={`/projects/${id}`}
+                class="absolute peer inset-0 z-10 bg-red-600x hover:-translate-y-1"
+                aria-label={`Go to ${title} project page`}
+            >
+            </a>
             {
                 links && (
-                    <div class="flex gap-3 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="flex gap-0.5 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
                         {links.github && (
-                            <button
-                                onclick={`window.open('${links.github}', '_blank'); event.stopPropagation();`}
-                                class="cursor-pointer text-muted hover:text-primary transition-colors duration-200"
+                            <a
+                                href={links.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="z-20 cursor-pointer text-muted hover:text-primary hover:bg-subtle/20 transition-all duration-200 p-2 rounded-full "
                                 aria-label={`${title} GitHub repository`}
                             >
                                 <Icon size={24} name="github" />
-                            </button>
+                            </a>
                         )}
 
                         {links.live && (
-                            <button
-                                onclick={`window.open('/projects/${id}', '_blank'); event.stopPropagation();`}
-                                class="cursor-pointer text-muted hover:text-primary transition-colors duration-200"
+                            <a
+                                href={links.live}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="z-20 cursor-pointer text-muted hover:text-primary hover:bg-subtle/20 transition-all duration-200 p-2 rounded-full "
                                 aria-label={`Visit ${title} live site`}
                             >
                                 <Icon size={24} name="popout" />
-                            </button>
+                            </a>
                         )}
                     </div>
                 )
             }
         </div>
 
-        <div class="flex-1 flex flex-col gap-4 justify-start items-stretch">
+        <div
+            class="relative flex-1 flex flex-col gap-4 justify-start items-stretch"
+        >
+            <div
+                class="absolute z-10 -bottom-1 left-0 w-full h-4 bg-gradient-to-l from-surface/90 to-80% to-transparent pointer-events-none"
+            >
+            </div>
+
             <h3
-                class="text-xl font-bold text-text group-hover:text-primary transition-colors duration-300"
+                class="text-xl font-bold text-text group-hover:text-primary transition-colors duration-300 line-clamp-2"
             >
                 {title}
             </h3>
 
-            <p class="text-muted text-sm leading-relaxed">
+            <p class="text-muted text-sm leading-relaxed line-clamp-4">
                 {desc}
             </p>
 
-            <div class="mt-auto flex flex-wrap gap-x-3 gap-y-1 pt-2">
+            <div
+                class="mb-auto flex flex-wrap gap-x-3 gap-y-1 pt-2 max-h-20 overflow-hidden relative"
+            >
                 {
                     tags.map((tag) => (
                         <span class="px-1 text-xs font-mono rounded-full text-subtle hover:text-primary hover:border-primary/30 transition-all duration-200">
@@ -75,4 +93,4 @@ const { id, title, desc, tags, links } = Astro.props;
             </div>
         </div>
     </div>
-</a>
+</div>

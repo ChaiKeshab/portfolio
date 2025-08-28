@@ -26,7 +26,7 @@ const { Content } = await project.render();
            } else {
               window.location.href = '/';
            }"
-            class="text-white flex items-center justify-center gap-2 cursor-pointer hover:text-primary hover:-translate-x-1 duration-200 transition-all"
+            class="text-text flex items-center justify-center gap-2 cursor-pointer hover:text-primary hover:-translate-x-1 duration-200 transition-all"
         >
             <Icon size={18} name={"leftarrow"} />
             <span class="text-base">Back</span>
@@ -36,29 +36,21 @@ const { Content } = await project.render();
             <article
                 class="max-w-4xl mx-auto w-full prose prose-lg dark:prose-invert"
             >
-                <header class="mb-8">
-                    <h1
-                        class="text-4xl md:text-5xl font-bold mb-4 text-primary"
-                    >
-                        {project.data.title}
-                    </h1>
-
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        {
-                            project.data.tags.map((tag) => (
-                                <span class="border-border bg-surface text-primary text-sm font-semibold px-3 py-1 rounded-md border">
-                                    {tag}
-                                </span>
-                            ))
-                        }
-                    </div>
-                </header>
-
                 <section
-                    class="mt-16 content prose prose-indigo dark:prose-invert max-w-none"
+                    class="content prose prose-indigo dark:prose-invert max-w-none"
                 >
                     <Content />
                 </section>
+
+                <div class="flex flex-wrap gap-2 mt-12">
+                    {
+                        project.data.tags.map((tag) => (
+                            <span class="border-border bg-surface text-primary text-sm font-semibold px-3 py-1 rounded-md border">
+                                {tag}
+                            </span>
+                        ))
+                    }
+                </div>
             </article>
         </div>
     </div>

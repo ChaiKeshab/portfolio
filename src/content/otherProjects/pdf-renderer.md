@@ -6,6 +6,8 @@ links:
   github: "https://github.com/ChaiKeshab/Pdf-with-react-pdf-renderer"
 ---
 
+# PDF Generation with React-PDF-Renderer
+
 ## 🧠 Overview
 
 This proof-of-concept project explores the capabilities of the [`@react-pdf/renderer`](https://react-pdf.org/) library for generating PDFs in React applications. The main goal was to test its feasibility for a larger production project, simulating a document editor-like workflow with custom templates, consistent formatting, and real-time previews.

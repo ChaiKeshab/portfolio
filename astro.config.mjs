@@ -8,7 +8,7 @@ export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
     },
-    site: 'https://www.chaikeshab.com.np',
+    site: 'https://chaikeshab.com.np',
     integrations: [icon(),
     sitemap({
         changefreq: 'monthly',
