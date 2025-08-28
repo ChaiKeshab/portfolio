@@ -5,9 +5,8 @@
 #let email = "keshab.chai0@gmail.com"
 #let github = "github.com/ChaiKeshab"
 #let linkedin = "linkedin.com/in/keshab-chai/"
-#let phone = "(+977) 981-366-7399"
+#let phone = "+977 981-366-7399"
 #let personal-site = "chaikeshab.com.np"
-
 
 #show: resume.with(
   author: name,
@@ -24,52 +23,37 @@
   personal-info-position: left,
 )
 
-/*
- * Lines that start with == are formatted into section headings
- * You can use the specific formatting functions if needed
- * The following formatting functions are listed below
- * #edu(dates: "", degree: "", gpa: "", institution: "", location: "", consistent: false)
- * #work(company: "", dates: "", location: "", title: "")
- * #project(dates: "", name: "", role: "", url: "")
- * certificates(name: "", issuer: "", url: "", date: "")
- * #extracurriculars(activity: "", dates: "")
- * There are also the following generic functions that don't apply any formatting
- * #generic-two-by-two(top-left: "", top-right: "", bottom-left: "", bottom-right: "")
- * #generic-one-by-two(left: "", right: "")
- */
-
 == Professional Summary
-Results-driven React.js developer with nearly 2 years building scalable, user-focused web applications. Specializes in multi-tenant architectures, real-time communication systems, and complex frontend migrations. Proven track record of delivering measurable business impact through modern JavaScript frameworks and cross-functional collaboration.
-
+React Developer and Frontend Engineer specializing in scalable web development, frontend architecture, and cross-functional collaboration. Proven ability to take ownership of broken or poorly designed projects and transform them into maintainable, future-proof platforms. Skilled at introducing modern libraries, improving security, and building user-focused systems. Strong problem-solving and communication skills with a collaborative approach to team development.
 
 == Skills
-- *Programming Languages*: JavaScript (ES6+), TypeScript, HTML/CSS, Python
-- *Frameworks & Libraries*: React.js, Astro, Next.js, Redux Toolkit, RTK Query, TanStack Query, Tailwind CSS, Vitest, Ant Design, Apache ECharts
-- *Tools & Methodologies*: Git, GitHub, GitLab, Firebase, Jira, Figma, Postman, SEO, Responsive Web Design
-- *APIs & Integrations*: WebSocket, STOMP (Simple Text Oriented Messaging Protocol), REST APIs, Gemini AI, Social Media Integration (Facebook, Instagram, WhatsApp)
-
+- *Frontend Development:* React.js, Next.js, Astro, JavaScript (ES6+), TypeScript, HTML5, CSS3, Responsive Design
+- *Architectural Design:* Frontend Architecture, Scalable multi-tenant systems, modular UI patterns, strict TypeScript migrations, security audits
+- *State & Data:* TanStack Query, Redux Toolkit, RTK Query, WebSocket (STOMP), RESTful APIs
+- *UI & Styling:* Tailwind CSS, Ant Design
+- *Integrations:* Stripe Payments, OpenAI Chat, OpenAI Voice Agent (MVP)
+- *Tools & Practices:* GitHub/GitLab, Git Workflows, Vitest, Version Control, Jira, Figma, Postman, SEO optimization
+- *Programming:* JavaScript (ES6+), TypeScript, HTML/CSS, Python
 
 == Work Experience
 #work(
-  title: "React.js Developer",
+  title: "React Developer",
   location: "Sydney, New South Wales (Remote)",
   company: "AusNep IT Solution Pvt. Ltd.",
   dates: "10/2023 - Present",
 )
 
-- Led end-to-end development of customer-facing frontends for enterprise projects, managing full project lifecycle from requirements gathering to deployment while collaborating with cross-functional teams
-- Performed security audit and vulnerability assessment of Create React App projects, implementing source map configuration changes to prevent code exposure and enhance application security
-- *Multi-tenant E-commerce & Real Estate Platforms*:
-  - Built fully dynamic storefronts with admin-controlled theming supporting 100+ branded subdomains using wildcard domains behind reverse-proxy setup
-  - Integrated Gemini AI chat functionality enhancing customer shopping experience with intelligent product recommendations, reducing page load time by 40% compared to legacy WordPress
-  - Extended real estate platform with scalable, admin-configurable design templates supporting 50+ property listings per tenant, reducing time-to-launch for new branded sites by 75%
-  - Developed real-time chat application using STOMP over WebSocket for tenant communication, improving communication efficiency by 30%
-- *Registered Training Organisation (RTO) Management Site*:
-  - Integrated IP tracking, email system, and cloud-based file management system, streamlining workflows for 500+ students and staff and reducing administrative overhead by 25%
-  - Implemented comprehensive support system managing subscription workflows, student accounts, staff interactions, timetable reports, and communication logs
-- *Messaging Integration Platform*: Developed frontend for platform integrating chat services like Facebook Messenger, Instagram, and WhatsApp using webhooks, centralizing communication across 3+ social media platforms and reducing client response time
-- *Ticket Management Platform Migration*: Migrated legacy PHP-based ticket management platform to React, implementing dark-mode Ant Design interface and Apache ECharts dashboard, improving system performance by 60% and reducing user onboarding time by 25%
-- *Service Enquiry Platform*: Took leadership of project after lead developer's departure, delivering key features and improving user engagement by 20% through enhanced functionality and core feature optimization
+- Architected and rebuilt core systems where legacy solutions were unscalable or broken, ensuring maintainability and team productivity.
+- Introduced TanStack Query to replace fragile Redux Observable/Thunk setups, reducing boilerplate and standardizing API integration.
+- Migrated projects from JavaScript to strict TypeScript (no `any`), improving long-term reliability and developer velocity.
+- Built a Google Drive–like file system entirely from scratch, fixing broken navigation and storage logic in a legacy implementation.
+- Collaborated with a team of 2 backend engineers to design and deliver a scalable e-commerce platform. Started as a single-tenant build, later adapted for admin-controlled theming and module toggling, and re-architected into a multi-tenant platform designed for unlimited storefronts, with automated onboarding and centralized backend infrastructure.
+- Implemented real-time socket systems (STOMP/WebSocket) for the first time at company, enabling live chat, tenant updates, and notifications.
+- Partnered with backend to design a secure Stripe payments flow with saved details, replacing insecure or portal-based solutions.
+- Developed a responsive CRM/Dashboard layout with persistent menu states and proper page-level scrolling, replacing broken UI patterns.
+- Improved frontend security by auditing and disabling source map leakage, preventing code exposure in production.
+- Refactored a core service-listing feature that was blocking shareable URLs and marketing campaigns. Re-architected flow to use route-based state, making forms modular, reusable, and sharable.
+- Researched and prototyped an OpenAI-powered voice agent, testing multiple approaches (Web Speech API, VAD, WebRTC, HTTP vs. SDK) and delivered a functional MVP using Whisper-1 (STT), GPT-4o-mini (context), and TTS-1 (speech).
 
 == Education
 #edu(
@@ -85,6 +69,7 @@ Results-driven React.js developer with nearly 2 years building scalable, user-fo
   dates: "2017 - 2019",
   degree: "+2 Science",
 )
+
 
 
 // == Projects

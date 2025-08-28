@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Icon } from "astro-icon/components";
 
 export async function getStaticPaths() {
     const projects = await getCollection("projects");
@@ -18,31 +19,47 @@ const { Content } = await project.render();
 ---
 
 <BaseLayout title={`Chai Keshab - ${project.data.title}`}>
-    <div class="min-h-screen container mx-auto px-2 md:px-12 lg:px-4 py-20">
-        <article
-            class="max-w-4xl mx-auto w-full prose prose-lg dark:prose-invert"
+    <div class="py-4">
+        <button
+            onclick="if (document.referrer && document.referrer.includes(window.location.host)) {
+              window.history.back();
+           } else {
+              window.location.href = '/';
+           }"
+            class="text-white flex items-center justify-center gap-2 cursor-pointer hover:text-primary hover:-translate-x-1 duration-200 transition-all"
         >
-            <header class="mb-8">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-primary">
-                    {project.data.title}
-                </h1>
+            <Icon size={18} name={"leftarrow"} />
+            <span class="text-base">Back</span>
+        </button>
 
-                <div class="flex flex-wrap gap-2 mb-6">
-                    {
-                        project.data.tags.map((tag) => (
-                            <span class="border-border bg-surface text-primary text-sm font-semibold px-3 py-1 rounded-md border">
-                                {tag}
-                            </span>
-                        ))
-                    }
-                </div>
-            </header>
-
-            <section
-                class="mt-16 content prose prose-indigo dark:prose-invert max-w-none"
+        <div class="min-h-screen container mx-auto px-2 md:px-12 lg:px-4 py-16">
+            <article
+                class="max-w-4xl mx-auto w-full prose prose-lg dark:prose-invert"
             >
-                <Content />
-            </section>
-        </article>
+                <header class="mb-8">
+                    <h1
+                        class="text-4xl md:text-5xl font-bold mb-4 text-primary"
+                    >
+                        {project.data.title}
+                    </h1>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        {
+                            project.data.tags.map((tag) => (
+                                <span class="border-border bg-surface text-primary text-sm font-semibold px-3 py-1 rounded-md border">
+                                    {tag}
+                                </span>
+                            ))
+                        }
+                    </div>
+                </header>
+
+                <section
+                    class="mt-16 content prose prose-indigo dark:prose-invert max-w-none"
+                >
+                    <Content />
+                </section>
+            </article>
+        </div>
     </div>
 </BaseLayout>

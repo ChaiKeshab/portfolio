@@ -10,7 +10,7 @@ interface Props {
 const {
     title = "Chai Keshab - Software Engineer & Web Developer Portfolio",
     description = `Results-driven React.js developer with nearly 2 years building scalable, user-focused web applications. Specializes in multitenant architectures, real-time communication systems, and complex frontend migrations. Proven track record of delivering measurable business impact through modern JavaScript frameworks and cross-functional collaboration.`,
-    keywords = "Chai Keshab, Chai, Keshab, Keshab Chai, software engineer, web developer, full stack developer, frontend developer, backend developer, React developer, JavaScript developer, TypeScript, Node.js, portfolio, web design, responsive design, HTML, CSS, MongoDB, SQL, API development, modern web technologies, programming, coding, software development, tech portfolio, developer resume, Nepal developer, software consultant, web applications, mobile responsive, UI/UX, database design, cloud computing, DevOps, Astro, Next.js, Vue.js, Angular, Express.js, REST API, GraphQL, Git, GitHub, agile development, software architecture, clean code, performance optimization, SEO optimization, accessibility, WCAG",
+    keywords = "Chai Keshab, Chai, Keshab, Keshab Chai, Chai Keshav, Keshav, Keshav Chai, software engineer, web developer, full stack developer, frontend developer, backend developer, React developer, JavaScript developer, TypeScript, Node.js, portfolio, web design, responsive design, HTML, CSS, MongoDB, SQL, API development, modern web technologies, programming, coding, software development, tech portfolio, developer resume, Nepal developer, software consultant, web applications, mobile responsive, UI/UX, database design, cloud computing, DevOps, Astro, Next.js, Vue.js, Angular, Express.js, REST API, GraphQL, Git, GitHub, agile development, software architecture, clean code, performance optimization, SEO optimization, accessibility, WCAG",
     ogImage = "/og-image.webp",
     canonicalUrl = Astro.url.href,
 } = Astro.props;
@@ -37,6 +37,13 @@ const siteUrl = "https://www.chaikeshab.com.np";
     content="oklch(70% 0.17 240)"
     media="(prefers-color-scheme: dark)"
 />
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
 
 <title>{title}</title>
 <meta name="title" content={title} />
@@ -75,6 +82,48 @@ const siteUrl = "https://www.chaikeshab.com.np";
 <meta property="article:author" content="Keshab Chai" />
 <meta property="profile:first_name" content="Keshab" />
 <meta property="profile:last_name" content="Chai" />
+
+<link
+    rel="preload"
+    href="/fonts/inter-regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+/>
+<link
+    rel="preload"
+    href="/fonts/inter-bold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+/>
+<link
+    rel="preload"
+    href="/fonts/inter-semibold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+/>
+
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- DNS Prefetch for external resources -->
+<link rel="dns-prefetch" href="//github.com" />
+<link rel="dns-prefetch" href="//linkedin.com" />
+
+<!-- Security Headers -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+<meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+
+<!-- Performance Hints -->
+<meta name="format-detection" content="telephone=no" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="Chai Keshab" />
+
+<!-- Copyright -->
+<meta name="copyright" content="© 2025 Chai Keshab. All rights reserved." />
 
 <!-- Additional Schema.org for Rich Snippets -->
 <script is:inline type="application/ld+json">
@@ -139,52 +188,3 @@ const siteUrl = "https://www.chaikeshab.com.np";
         ]
     }
 </script>
-
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-<link rel="manifest" href="/site.webmanifest" />
-
-<link
-    rel="preload"
-    href="/fonts/inter-regular.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-/>
-<link
-    rel="preload"
-    href="/fonts/inter-bold.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-/>
-<link
-    rel="preload"
-    href="/fonts/inter-semibold.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-/>
-
-<link rel="sitemap" href="/sitemap-index.xml" />
-
-<!-- DNS Prefetch for external resources -->
-<link rel="dns-prefetch" href="//github.com" />
-<link rel="dns-prefetch" href="//linkedin.com" />
-
-<!-- Security Headers -->
-<meta http-equiv="X-Content-Type-Options" content="nosniff" />
-<meta http-equiv="X-XSS-Protection" content="1; mode=block" />
-
-<!-- Performance Hints -->
-<meta name="format-detection" content="telephone=no" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-<meta name="apple-mobile-web-app-title" content="Chai Keshab" />
-
-<!-- Copyright -->
-<meta name="copyright" content="© 2025 Chai Keshab. All rights reserved." />
