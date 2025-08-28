@@ -54,7 +54,7 @@ public/
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/ChaiKeshab/portfolio
 cd portfolio
 
 # Install dependencies
@@ -108,7 +108,7 @@ Automatically pulls README files from specified repositories and converts them i
 - **SEO Ready**: Meta tags, OpenGraph, and structured data
 - **Accessible**: WCAG compliant with proper semantics
 - **Modern Stack**: Latest Astro features and best practices
-- **Automated Workflow**: Zero-maintenance content updates
+- **Automated Workflow**: Minimal maintenance content updates
 
 ## 🌐 Deployment
 
@@ -127,4 +127,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Built with ❤️ using Astro
+Built with Astro
