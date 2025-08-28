@@ -12,8 +12,13 @@ const repos = [
 const CONTENT_DIR = path.resolve("src/content/otherProjects");
 if (!fs.existsSync(CONTENT_DIR)) fs.mkdirSync(CONTENT_DIR, { recursive: true });
 
-// for fetching private repos
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+/**
+ * for fetching private repos;
+ * const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+ * 
+ * pass it to fetch request headers if required;
+ * headers: { Authorization: `token ${GITHUB_TOKEN}` }
+ */
 
 /**
  *
