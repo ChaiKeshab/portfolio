@@ -23,7 +23,7 @@ A modern, fast, and SEO-optimized personal portfolio built with Astro and hosted
 
 ## 📁 Project Structure
 
-```
+```text
 src/
 ├── content/
 │   └── otherProjects/     # Auto-generated from GitHub READMEs
