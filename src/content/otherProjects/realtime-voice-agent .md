@@ -1,5 +1,5 @@
 ---
-title: realtime-voice-agent
+title: Realtime Voice Agent
 desc: A demo voice agent built with OpenAI Realtime API, combining gpt-4o-mini-realtime-preview for live voice conversations and gpt-4o-mini-transcribe for speech-to-text. Supports speech-to-speech and text-based interaction, with transcripts, WebRTC streaming, and function calling.
 tags: ["gpt-4o-mini-realtime-preview","gpt-4o-mini-transcribe","react","typescript","voice-agent","webrtc"]
 links: 

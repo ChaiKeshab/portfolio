@@ -1,5 +1,5 @@
 ---
-title: react-antd-admin-template
+title: React Antd Admin Template
 desc: Modern React Admin Dashboard Template with Ant Design, Tailwind CSS & Flexible Theming System
 tags: ["admin-dashboard","antd","apache-echarts","boilerplate","data-tables","multi-step-form","reactjs","redux-persist","redux-toolkit","tailwindcss-v4","theme-customization","typescript"]
 links: 

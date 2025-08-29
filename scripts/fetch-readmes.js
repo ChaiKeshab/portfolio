@@ -52,7 +52,7 @@ async function fetchRepoData({ owner, repo, branch = 'main' }) {
  */
 function injectFrontmatter(meta, readme) {
     const frontmatter = `---
-title: ${meta.name}
+title: ${toTitleCase(meta.name)}
 desc: ${meta.description || meta.name}
 tags: [${(meta.topics || []).map(
         /**
@@ -70,6 +70,20 @@ links:
     // remove old frontmatter if present
     const content = readme.replace(/^---[\s\S]*?---\n/, "");
     return frontmatter + content;
+}
+
+/**
+ * 
+ * @param {string} str 
+ * @returns {string}
+ */
+function toTitleCase(str) {
+    return str
+        .replace(/[_-]/g, " ")        // replace _ and - with spaces
+        .replace(/\s+/g, " ")         // collapse multiple spaces
+        .trim()
+        .toLowerCase()
+        .replace(/\b\w/g, (char) => char.toUpperCase()); // capitalize first letter of each word
 }
 
 async function run() {

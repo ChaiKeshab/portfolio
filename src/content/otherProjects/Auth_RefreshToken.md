@@ -1,5 +1,5 @@
 ---
-title: Auth_RefreshToken
+title: Auth Refreshtoken
 desc: Minimal auth flow with access tokens, httpOnly refresh tokens, and Axios interceptors for auto-refresh. Includes protected routes with React Router. Demo template — not production-ready.
 tags: ["auth-refreshtoken","axios","jwt","react"]
 links: 
