@@ -38,12 +38,7 @@ const { title, description } = Astro.props;
         <ClientRouter />
     </head>
     <body>
-        <img
-            id="background"
-            src={background.src}
-            aria-hidden="true"
-            fetchpriority="high"
-        />
+        <div id="background" aria-hidden="true"></div>
 
         <Navigation />
 

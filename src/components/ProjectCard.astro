@@ -33,7 +33,7 @@ const { id, title, desc, tags, links } = Astro.props;
             </a>
             {
                 links && (
-                    <div class="flex gap-0.5 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="z-20 flex gap-0.5 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
                         {links.github && (
                             <a
                                 href={links.github}
