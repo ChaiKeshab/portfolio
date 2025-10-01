@@ -22,17 +22,16 @@
   author-position: left,
   personal-info-position: left,
 )
-
 == Professional Summary
-React Developer and Frontend Engineer specializing in scalable web development, frontend architecture, and cross-functional collaboration. Proven ability to take ownership of broken or poorly designed projects and transform them into maintainable, future-proof platforms. Skilled at introducing modern libraries, improving security, and building user-focused systems. Strong problem-solving and communication skills with a collaborative approach to team development.
+React Developer and Frontend Engineer with 2+ years of experience delivering production-ready platforms, real-time apps, and scalable multi-tenant systems. Known for taking ownership of complex problems and turning them into maintainable, user-friendly solutions. Skilled in modern JavaScript frameworks, TypeScript, and cloud integrations, with proven success collaborating across teams to ship secure, high-impact products.
 
 == Skills
 - *Frontend Development:* React.js, Next.js, Astro, JavaScript (ES6+), TypeScript, HTML5, CSS3, Responsive Design
-- *Architectural Design:* Frontend Architecture, Scalable multi-tenant systems, modular UI patterns, strict TypeScript migrations, security audits
+- *Architecture & Systems:* Multi-tenant platforms, modular UI design, TypeScript migrations, Frontend architecture, security audits
 - *State & Data:* TanStack Query, Redux Toolkit, RTK Query, WebSocket (STOMP), RESTful APIs
-- *UI & Styling:* Tailwind CSS, Ant Design
-- *Integrations:* Stripe Payments, OpenAI Chat, OpenAI Voice Agent (MVP)
-- *Tools & Practices:* GitHub/GitLab, Git Workflows, Vitest, Version Control, Jira, Figma, Postman, SEO optimization
+- *UI & Styling:* Tailwind CSS, Ant Design, Apache ECharts
+- *Integrations:* Stripe Payments, OpenAI (Chat & Voice Agents), Gemini AI
+- *Tools & Practices:* GitHub/GitLab, Git Workflows, Vitest, Jira, Figma, Postman, SEO optimization
 - *Programming:* JavaScript (ES6+), TypeScript, HTML/CSS, Python
 
 == Work Experience
@@ -43,17 +42,17 @@ React Developer and Frontend Engineer specializing in scalable web development, 
   dates: "10/2023 - Present",
 )
 
-- Collaborated with a team of 2 backend engineers to design and deliver a scalable e-commerce platform. Started as a single-tenant build, later adapted for admin-controlled theming and module toggling, and re-architected into a multi-tenant platform designed for unlimited storefronts, with automated onboarding and centralized backend infrastructure.
-- Built OpenAI-powered voice agents using both traditional STT→LLM→TTS pipeline (Whisper-1, GPT-4o-mini, TTS-1) and cutting-edge real-time API (GPT-4o-mini-realtime-preview) with WebRTC for live bidirectional conversations and real-time transcription via GPT-4o-mini-transcribe.
-- Built a Google Drive–like file system entirely from scratch, fixing broken navigation and storage logic in a legacy implementation.
-- Implemented real-time socket systems (STOMP/WebSocket) for the first time at company, enabling live chat, tenant updates, and notifications.
-- Refactored a core service-listing feature that was blocking shareable URLs and marketing campaigns. Re-architected flow to use route-based state, making forms modular, reusable, and sharable.
-- Migrated projects from JavaScript to strict TypeScript (no `any`), improving long-term reliability and developer velocity.
-- Partnered with backend to design a secure Stripe payments flow with saved details, replacing insecure or portal-based solutions.
-- Introduced TanStack Query to replace fragile Redux Observable/Thunk setups, reducing boilerplate and standardizing API integration.
-- Developed a responsive CRM/Dashboard layout with persistent menu states and proper page-level scrolling, replacing broken UI patterns.
-- Improved frontend security by auditing and disabling source map leakage, preventing code exposure in production.
-- Architected and rebuilt core systems where legacy solutions were unscalable or broken, ensuring maintainability and team productivity.
+- Collaborated with 2 backend engineers to evolve a single-tenant e-commerce build into a *multi-tenant platform* with admin-controlled theming, module toggling, automated onboarding, and centralized infrastructure, enabling unlimited storefronts and faster company scaling.
+- Engineered cutting-edge *AI voice agents* using both traditional (Whisper/GPT/TTS) and real-time API pipelines (GPT-4o-mini-preview/WebRTC) to facilitate live, bidirectional conversations and transcription.
+- Implemented *real-time chat* using STOMP/WebSocket, enabling messaging and improving responsiveness across the platform.
+- Migrated projects from JavaScript to *strict TypeScript*, boosting developer speed and confidence with autocomplete, type-safe refactoring, and property validation, cutting rework time by \~25%.
+- Partnered with backend engineers to deliver a *secure Stripe payments flow* with saved details, replacing insecure legacy solutions and reducing friction for repeat customers.
+- Introduced *TanStack Query* to standardize API integration, eliminating verbose Redux-based patterns and inconsistent setups, cutting boilerplate and reducing API errors, and reducing API development time by \~40%.
+- Rebuilt the main *CRM/Dashboard frontend*, solving critical scrolling/UI bugs and introducing persistent navigation states for a significantly smoother and more professional user experience.
+- Improved *application security* by conducting comprehensive frontend audits and disabling source map leakage, *preventing exposure of production source code.*
+- Migrated a legacy *ticket management system* from PHP to React, improving navigation speed by \~80% and simplifying onboarding for new users.
+- Delivered an *RTO management system* with IP tracking, automated workflows, and a *Google Drive–like file system*, streamlining storage and communication for 500+ students and staff.
+- Took over a *service enquiry platform* mid-project, fixed a core architectural issue blocking product marketing, completed key features, and improved usability ensuring successful launch.
 
 == Education
 #edu(
